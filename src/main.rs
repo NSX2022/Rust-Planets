@@ -1,3 +1,4 @@
+use std::io::stdin;
 use rand::*;
 use rand::rngs::StdRng;
 
@@ -105,4 +106,9 @@ fn main() {
     let mut rng = rand::rng();
     let p = Planet::new(rng.random_range(0..=9999999999999999));
     p.display();
+    let mut input: String = " ".to_string();
+    while(input == " "){
+        stdin().read_line(&mut input).expect("Failed to read line");
+    }
+    std::process::exit(0);
 }
